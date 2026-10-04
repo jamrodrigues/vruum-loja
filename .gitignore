@@ -1,0 +1,27 @@
+/app/config/parameters.php
+/var/cache/*
+/var/logs/*
+/var/sessions/*
+*.sql
+ruvector.db
+
+# Config/estado de ferramentas de IA, não faz parte da loja
+/.claude/
+/.claude-flow/
+/.agents/
+/.mcp.json
+
+# Artefatos de comandos shell mal interpretados (arquivos de 0 bytes na raiz)
+/'
+/.btn-outline-warning.dropdown-toggle{color
+/5
+/9
+/categoria
+/email
+/fetchColumn()
+/getBaseLink()
+/getByEmail('jameson.rodriguesx@gmail.com'
+/id_product
+/qty
+/rowCount()
+

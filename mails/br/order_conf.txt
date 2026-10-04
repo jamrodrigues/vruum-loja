@@ -1,0 +1,44 @@
+ 
+
+{shop_url}
+
+Olá {firstname} {lastname},
+
+Obrigado por comprar na {shop_name}!
+
+Detalhes do pedido
+
+Pedido: {order_name} Realizado em {date}
+
+Pagamento: {payment}
+
+Referência	Produto	Preço Unitário	Quantidade	Valor total  {products_txt} {discounts_txt}
+Produtos	{total_products}
+Descontos	{total_discounts}
+Frete	{total_shipping}
+Incluindo impostos	{total_tax_paid}
+Total pago	{total_paid}
+
+Frete
+
+Transportadora {carrier}
+
+Pagamento: {payment}
+
+Embalagens Recicladas: {recycled_packaging_label}
+
+Endereço de entrega
+
+{delivery_block_txt}
+
+Endereço de cobrança
+
+{invoice_block_txt}
+
+Follow your order and download your invoice on our store, go to the [Histórico e detalhes dos pedidos]({history_url}) section of your customer account.
+
+Se você tem uma conta de convidado pode acompanhar seu pedido através da seção [Rastreamento para Visitante]({guest_tracking_url}) em nossa loja.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)

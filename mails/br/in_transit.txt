@@ -1,0 +1,21 @@
+ 
+
+{shop_url}
+
+Olá {firstname} {lastname},
+
+{meta_products}
+
+Pedido ID {order_name} - Enviado
+
+Seu pedido com a referência {order_name} já está a caminho.
+
+Você pode acompanhar o envio do produto usando o link: {followup}
+
+Follow your order and download your invoice on our store, go to the [Histórico e detalhes dos pedidos]({history_url}) section of your customer account.
+
+Se você tem uma conta de convidado pode acompanhar seu pedido através da seção [Rastreamento para Visitante]({guest_tracking_url}) em nossa loja.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)

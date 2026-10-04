@@ -1,0 +1,15 @@
+ 
+
+{shop_url}
+
+Olá {firstname} {lastname},
+
+Pedido ID {order_name} - Crédito
+
+Foi gerado um crédito em seu nome para o pedido com a referência {order_name}.
+
+Review this credit slip and download your invoice on our store, go to the [Créditos]({history_url}) section of your customer account.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)

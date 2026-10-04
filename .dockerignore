@@ -1,0 +1,14 @@
+.git
+app/config/parameters.php
+var/cache/*
+var/logs/*
+var/sessions/*
+*.sql
+ruvector.db
+Dockerfile
+docker-entrypoint.sh
+DEPLOY.md
+DESIGN.md
+PRODUCT.md
+INSTALL.txt
+LICENSES

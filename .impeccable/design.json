@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-23T22:30:00Z",
+  "title": "Design System: Vrumm Motos",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Laranja Vruumoto",
+        "canonical": "oklch(63% 0.19 41)",
+        "tonalRamp": ["#3A1400", "#5C2000", "#8A2E00", "#BF360C", "#E65100", "#FF6D00", "#FFA05C", "#FFD9BA"]
+      },
+      "primary-light": {
+        "role": "primary-variant",
+        "displayName": "Laranja Claro / Hover",
+        "canonical": "oklch(70% 0.20 45)"
+      },
+      "primary-deep": {
+        "role": "primary-variant",
+        "displayName": "Laranja Profundo",
+        "canonical": "oklch(45% 0.16 35)"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Preto Asfalto",
+        "canonical": "oklch(20% 0 0)",
+        "tonalRamp": ["#000000", "#0D0D0D", "#1A1A1A", "#2A2A2A", "#3D3D3D", "#5C5C5C", "#8A8A8A", "#C4C4C4"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Branco Cartão",
+        "canonical": "oklch(100% 0 0)"
+      },
+      "surface-alt": {
+        "role": "neutral",
+        "displayName": "Cinza Base",
+        "canonical": "oklch(95% 0 0)"
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Verde Estoque",
+        "canonical": "oklch(68% 0.14 145)"
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Vermelho Erro",
+        "canonical": "oklch(62% 0.22 25)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Títulos de categoria/página, nome de produto no detalhe." },
+      "body": { "displayName": "Body", "purpose": "Texto corrido, descrição, formulário." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 2px 12px rgba(0,0,0,0.08)", "purpose": "Estado padrão de card de produto, formulário, popover." },
+      { "name": "cta-glow", "value": "0 4px 16px rgba(230,81,0,0.35)", "purpose": "Botão de ação principal da tela (Adicionar ao carrinho, Finalizar Compra)." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Transição padrão de hover/focus em botões, cards, chips." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "0px" },
+      { "name": "tablet", "value": "768px" },
+      { "name": "desktop", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão de ação principal (Adicionar ao carrinho, Finalizar Compra).",
+      "html": "<button class=\"ds-btn-primary\">Adicionar ao carrinho</button>",
+      "css": ".ds-btn-primary { background: #E65100; color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; padding: 12px 20px; border: none; border-radius: 8px; box-shadow: 0 4px 16px rgba(230,81,0,0.35); cursor: pointer; transition: background 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #FF6D00; } .ds-btn-primary:focus-visible { outline: 3px solid rgba(230,81,0,0.4); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação secundária (ghost, borda laranja).",
+      "html": "<button class=\"ds-btn-secondary\">Ver detalhes</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #E65100; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; padding: 10px 18px; border: 1.5px solid #E65100; border-radius: 8px; cursor: pointer; transition: background 0.2s; } .ds-btn-secondary:hover { background: #FFF3E0; }"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Card de produto em listagem/grid.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-badge\">-25%</div><div class=\"ds-card-img\"></div><div class=\"ds-card-name\">Filtro de Óleo Honda CG 160</div><div class=\"ds-card-price\">R$ 34,42</div></div>",
+      "css": ".ds-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 16px; position: relative; font-family: 'Plus Jakarta Sans', sans-serif; width: 220px; } .ds-card-badge { position: absolute; top: 8px; left: 8px; background: #E65100; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; } .ds-card-img { width: 100%; aspect-ratio: 1; background: linear-gradient(145deg,#EEEEEE,#BDBDBD); border-radius: 8px; margin-bottom: 10px; } .ds-card-name { font-size: 13px; font-weight: 600; color: #1A1A1A; margin-bottom: 6px; } .ds-card-price { font-size: 18px; font-weight: 800; color: #E65100; }"
+    },
+    {
+      "name": "Category Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Chip de categoria/filtro, estado selecionado e não-selecionado.",
+      "html": "<div class=\"ds-chip ds-chip-selected\">Filtros</div>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 5px; background: #fff; border-radius: 20px; padding: 6px 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600; color: #1A1A1A; box-shadow: 0 1px 4px rgba(0,0,0,0.08); border: 1.5px solid transparent; cursor: pointer; } .ds-chip-selected { background: #FFF3E0; color: #E65100; border-color: #E65100; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de formulário (cadastro, checkout).",
+      "html": "<input class=\"ds-input\" placeholder=\"Seu e-mail\" />",
+      "css": ".ds-input { width: 100%; height: 48px; background: #fff; border: 1.5px solid #EEEEEE; border-radius: 8px; padding: 0 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #1A1A1A; } .ds-input:focus { outline: none; border-color: #E65100; box-shadow: 0 0 0 3px rgba(230,81,0,0.12); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Pista Noturna",
+    "overview": "Vrumm Motos é uma loja de peças de moto pensada como painel de pista à noite: fundo preto-asfalto (#1A1A1A) contra laranja alta-visibilidade (#E65100), o mesmo par de cores da logo Vruumoto. A densidade de informação segue o marketplace brasileiro (Mercado Livre / Shopee), não o minimalismo europeu — cards grandes, chips de categoria, badge de desconto visível, preço em destaque. O cliente já sabe o que precisa; a interface existe pra confirmar rápido que a peça certa está ali, com estoque e forma de pagamento claras, e fechar a compra sem fricção.",
+    "keyCharacteristics": [
+      "Header e footer pretos (#1A1A1A), como uma pista à noite — o laranja é o farol.",
+      "Preço sempre em laranja e bold; é o dado que mais importa numa decisão de compra rápida.",
+      "Cards com sombra suave e cantos arredondados (12px), nunca chapados/quadrados.",
+      "Badges (desconto, estoque, NOVO) pequenos, sólidos, alto contraste."
+    ],
+    "rules": [
+      { "name": "A Regra do Farol", "body": "O laranja (#E65100) nunca é decorativo — todo uso dele é um convite à ação. Se não é clicável nem é preço, não é laranja.", "section": "colors" },
+      { "name": "A Regra do Peso", "body": "Nunca usar uma segunda família pra criar hierarquia — só peso (500→700→800) e tamanho.", "section": "typography" },
+      { "name": "A Regra do Brilho Laranja", "body": "Só o botão de ação principal da tela ganha sombra colorida (cta-glow). Um único CTA glow por tela.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar preço sempre em laranja bold (#E65100, peso 800).",
+      "Do manter header/footer pretos (#1A1A1A) em toda página.",
+      "Do usar badges sólidos e pequenos, densidade estilo Mercado Livre/Shopee.",
+      "Do aplicar cta-glow só no botão de ação principal de cada tela."
+    ],
+    "donts": [
+      "Don't deixar a loja parecer WordPress genérico sem identidade.",
+      "Don't deixar a loja parecer catálogo B2B frio de distribuidor.",
+      "Don't usar border-left colorido como indicador de status.",
+      "Don't misturar uma segunda família tipográfica.",
+      "Don't aplicar sombra cta-glow em mais de um botão por tela."
+    ]
+  }
+}

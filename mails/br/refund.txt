@@ -1,0 +1,17 @@
+ 
+
+{shop_url}
+
+Olá {firstname} {lastname},
+
+Pedido ID {order_name} - Ressarcimento processado
+
+Processamos seu reembolso para o pedido com a referência {order_name} da {shop_name}.
+
+Follow your order and download your invoice on our store, go to the [Histórico e detalhes dos pedidos]({history_url}) section of your customer account.
+
+Se você tem uma conta de convidado pode acompanhar seu pedido através da seção [Rastreamento para Visitante]({guest_tracking_url}) em nossa loja.
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)

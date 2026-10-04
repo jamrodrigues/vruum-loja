@@ -1,0 +1,17 @@
+ 
+
+{shop_url}
+
+Olá {firstname} {lastname},
+
+Atendimento ao Cliente - Discussão Encaminhada
+
+{employee} deseja encaminhar esta discussão para você.
+
+Histórico da conversa: {messages}
+
+{employee} adicionou {comment}
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)

@@ -1,0 +1,13 @@
+ 
+
+{shop_url}
+
+Olá,
+
+Assinar newsletter
+
+Obrigado por se inscrever em nossa newsletter. É uma satisfação oferecermos o seguinte vale-desconto: {discount}
+
+[{shop_name}]({shop_url})
+
+Powered by [PrestaShop](https://www.prestashop-project.org/)
