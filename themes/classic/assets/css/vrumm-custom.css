@@ -74,3 +74,11 @@
   padding: 6px 12px;
   border-radius: 4px;
 }
+
+/* Slider da home (#carousel) estoura a largura da tela no mobile: o tema
+   usa width:100vw + margin-left:-15px pra sangrar o container, mas o Chrome
+   resolve "left" de um position:relative como auto != 0 nessa combinação,
+   deslocando o slide pra direita e vazando a tela. */
+#carousel {
+  left: 0;
+}
