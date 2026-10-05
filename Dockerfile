@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
         libonig-dev \
         unzip \
     && docker-php-ext-configure gd --with-jpeg --with-webp \
-    && docker-php-ext-install -j"$(nproc)" \
+    && docker-php-ext-install -j1 \
         gd \
         intl \
         mbstring \
