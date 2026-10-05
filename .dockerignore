@@ -5,8 +5,6 @@ var/logs/*
 var/sessions/*
 *.sql
 ruvector.db
-Dockerfile
-docker-entrypoint.sh
 DEPLOY.md
 DESIGN.md
 PRODUCT.md
