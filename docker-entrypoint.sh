@@ -4,8 +4,8 @@ set -e
 PARAMS_FILE="app/config/parameters.php"
 
 # Garante que as pastas graváveis existem (importante se forem volumes vazios)
-mkdir -p var/cache var/logs var/sessions img download upload
-chown -R www-data:www-data var img download upload app/config modules 2>/dev/null || true
+mkdir -p var/cache var/logs var/sessions img download upload themes/classic/assets/cache
+chown -R www-data:www-data var img download upload app/config modules themes/classic/assets 2>/dev/null || true
 
 # Só gera parameters.php se ainda não existir (não sobrescreve config já feita,
 # nem troca secret/cookie_key de um deploy pro outro — isso derrubaria sessões).
@@ -32,6 +32,7 @@ if [ ! -f "$PARAMS_FILE" ] && [ -n "$DB_HOST" ]; then
                 "secret" => $secret,
                 "ps_caching" => "CacheMemcache",
                 "ps_cache_enable" => false,
+                "ps_creation_date" => date("Y-m-d"),
                 "locale" => "pt-BR",
                 "use_debug_toolbar" => false,
                 "cookie_key" => $cookieKey,

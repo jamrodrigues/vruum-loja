@@ -21,11 +21,15 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # .htaccess do PrestaShop precisa de AllowOverride All
+# SetEnvIf confia no X-Forwarded-Proto do Traefik (proxy reverso termina o SSL antes do Apache)
 RUN { \
         echo '<Directory /var/www/html/>'; \
         echo '    AllowOverride All'; \
         echo '    Require all granted'; \
         echo '</Directory>'; \
+        echo '<IfModule mod_setenvif.c>'; \
+        echo '    SetEnvIf X-Forwarded-Proto https HTTPS=on'; \
+        echo '</IfModule>'; \
     } > /etc/apache2/conf-available/prestashop.conf \
     && a2enconf prestashop
 
@@ -36,8 +40,8 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Pastas que o PrestaShop precisa escrever em runtime
-RUN mkdir -p var/cache var/logs var/sessions img download upload \
-    && chown -R www-data:www-data var img download upload app/config modules
+RUN mkdir -p var/cache var/logs var/sessions img download upload themes/classic/assets/cache \
+    && chown -R www-data:www-data var img download upload app/config modules themes/classic/assets
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
