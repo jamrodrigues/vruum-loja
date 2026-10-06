@@ -47,11 +47,9 @@
           <div class="payment-methods">
             <span class="payment-methods-label">Formas de pagamento:</span>
             <ul class="payment-methods-list">
-              <li class="payment-badge">Pix</li>
               <li class="payment-badge payment-badge-img">
-                <img src="/modules/mercadopago/views/img/mercadopago_big.png" alt="Mercado Pago" loading="lazy">
+                <img src="{$urls.base_url}themes/classic/assets/img/mercadopago-logo.svg" alt="Mercado Pago — Pix, boleto e cartões" loading="lazy">
               </li>
-              <li class="payment-badge">Boleto</li>
             </ul>
           </div>
         {/block}
