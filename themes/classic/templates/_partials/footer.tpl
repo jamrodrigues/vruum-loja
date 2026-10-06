@@ -55,6 +55,11 @@
         {/block}
       </div>
     </div>
+  </div>
+  <div class="vrumm-footer-help-bar">
+    <p>Precisa de ajuda? Fale com a gente no WhatsApp: <a href="https://wa.me/5581985559888" target="_blank" rel="noopener noreferrer">(81) 98555-9888</a></p>
+  </div>
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
         {if $shop.registration_number}

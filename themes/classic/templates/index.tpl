@@ -28,6 +28,31 @@
       <section id="content" class="page-home">
         {block name='page_content_top'}
           {$HERO_SLIDER nofilter}
+          <div class="vrumm-trust-bar">
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE558;</i> Envio para todo o Brasil</div>
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE8A1;</i> Pix, boleto ou cartão</div>
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE897;</i> Compra 100% segura</div>
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE310;</i> Atendimento rápido</div>
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE8D5;</i> Troca garantida em 7 dias</div>
+          </div>
+
+          <div class="vrumm-category-banners">
+            <a class="vrumm-category-banner vrumm-category-banner--freios" href="{$link->getCategoryLink(4)}">
+              <span class="vrumm-category-banner-eyebrow">Peças de precisão</span>
+              <span class="vrumm-category-banner-title">Freios</span>
+              <span class="vrumm-category-banner-cta">Comprar agora</span>
+            </a>
+            <a class="vrumm-category-banner vrumm-category-banner--capacetes" href="{$link->getCategoryLink(7)}">
+              <span class="vrumm-category-banner-eyebrow">Segurança em primeiro lugar</span>
+              <span class="vrumm-category-banner-title">Capacetes</span>
+              <span class="vrumm-category-banner-cta">Comprar agora</span>
+            </a>
+            <a class="vrumm-category-banner vrumm-category-banner--pneus" href="{$link->getCategoryLink(10)}">
+              <span class="vrumm-category-banner-eyebrow">Aderência e durabilidade</span>
+              <span class="vrumm-category-banner-title">Pneus</span>
+              <span class="vrumm-category-banner-cta">Comprar agora</span>
+            </a>
+          </div>
         {/block}
 
         {block name='page_content'}

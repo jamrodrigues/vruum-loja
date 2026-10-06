@@ -44,17 +44,13 @@
               </picture>
             </a>
           {else}
-            <a href="{$product.url}" class="thumbnail product-thumbnail">
-              <picture>
-                {if !empty($urls.no_picture_image.bySize.home_default.sources.avif)}<source srcset="{$urls.no_picture_image.bySize.home_default.sources.avif}" type="image/avif">{/if}
-                {if !empty($urls.no_picture_image.bySize.home_default.sources.webp)}<source srcset="{$urls.no_picture_image.bySize.home_default.sources.webp}" type="image/webp">{/if}
-                <img
-                  src="{$urls.no_picture_image.bySize.home_default.url}"
-                  loading="lazy"
-                  width="{$urls.no_picture_image.bySize.home_default.width}"
-                  height="{$urls.no_picture_image.bySize.home_default.height}"
-                />
-              </picture>
+            <a href="{$product.url}" class="thumbnail product-thumbnail product-thumbnail-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <circle cx="9" cy="10.5" r="1.75"></circle>
+                <path d="M3 16l5-4.5 4 3.5 3-2.5 6 5"></path>
+              </svg>
+              <span>Foto em breve</span>
             </a>
           {/if}
         {/block}

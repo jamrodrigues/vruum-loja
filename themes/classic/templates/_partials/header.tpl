@@ -32,8 +32,13 @@
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down">
-          <div class="col-md-12 col-xs-12">
-            {hook h='displayNav1'}
+          <div class="col-md-12 col-xs-12 vrumm-topbar-row">
+            <div class="vrumm-topbar-contact">
+              {hook h='displayNav1'}
+              <a href="https://wa.me/5581985559888" target="_blank" rel="noopener noreferrer" class="vrumm-topbar-whatsapp">
+                <i class="material-icons">&#xE0B0;</i> (81) 98555-9888
+              </a>
+            </div>
           </div>
         </div>
         <div class="hidden-md-up text-sm-center mobile">
@@ -69,6 +74,12 @@
           {hook h='displayBanner'}
         </div>
         <div class="vrumm-header-account hidden-sm-down">
+          <a href="{$link->getModuleLink('poscompare', 'comparePage')}" class="vrumm-header-icon-link" title="Comparar produtos">
+            <i class="material-icons">&#xE8D5;</i>
+          </a>
+          <a href="{$link->getModuleLink('poswishlist', 'mywishlist')}" class="vrumm-header-icon-link" title="Lista de favoritos">
+            <i class="material-icons">&#xE87D;</i>
+          </a>
           {hook h='displayNav2'}
         </div>
       </div>
@@ -83,8 +94,13 @@
     </div>
   </div>
   <div class="vrumm-header-menu hidden-sm-down">
-    <div class="container">
-      {hook h='displayTop'}
+    <div class="container vrumm-menu-row">
+      <div class="vrumm-menu-categories">
+        {hook h='displayVegamenu'}
+      </div>
+      <div class="vrumm-menu-nav">
+        {hook h='displayMegamenu'}
+      </div>
     </div>
   </div>
   {hook h='displayNavFullWidth'}
