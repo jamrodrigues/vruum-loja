@@ -1,5 +1,4 @@
 /app/config/parameters.php
-/.htaccess
 /var/cache/*
 /var/logs/*
 /var/sessions/*
