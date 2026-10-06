@@ -48,7 +48,9 @@
             <span class="payment-methods-label">Formas de pagamento:</span>
             <ul class="payment-methods-list">
               <li class="payment-badge">Pix</li>
-              <li class="payment-badge">Mercado Pago</li>
+              <li class="payment-badge payment-badge-img">
+                <img src="/modules/mercadopago/views/img/mercadopago_big.png" alt="Mercado Pago" loading="lazy">
+              </li>
               <li class="payment-badge">Boleto</li>
             </ul>
           </div>
