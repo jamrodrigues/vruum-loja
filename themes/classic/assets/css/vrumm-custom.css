@@ -87,12 +87,176 @@
   width: auto;
 }
 
-/* Slider da home (#carousel) estoura a largura da tela no mobile: o tema
-   usa width:100vw + margin-left:-15px pra sangrar o container, mas o Chrome
-   resolve "left" de um position:relative como auto != 0 nessa combinação,
-   deslocando o slide pra direita e vazando a tela. */
-#carousel {
+/* Hero slider (Slick Carousel) — full-bleed, mesma técnica usada no resto
+   do site: sangra além do .container usando a largura da viewport. */
+.vrumm-hero-slick {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.vrumm-hero-slide {
+  position: relative;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+.vrumm-hero-slide-content {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  max-width: 460px;
+  color: #FFFFFF;
+}
+
+.vrumm-hero-slide-content h3 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  color: #FF6D00;
+}
+
+.vrumm-hero-slide-content p {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.vrumm-hero-slide-content .vrumm-slide-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.vrumm-hero-slide-content .vrumm-slide-installment {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.vrumm-hero-slide-content a {
+  display: inline-block;
+  margin-top: 6px;
+  color: #FF6D00;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Setas */
+.vrumm-hero-slick .slick-prev,
+.vrumm-hero-slick .slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.vrumm-hero-slick .slick-prev { left: 20px; }
+.vrumm-hero-slick .slick-next { right: 20px; }
+
+.vrumm-hero-slick .slick-prev:hover,
+.vrumm-hero-slick .slick-next:hover {
+  background-color: #E65100;
+}
+
+.vrumm-hero-slick .slick-prev::before,
+.vrumm-hero-slick .slick-next::before {
+  font-family: "Material Icons";
+  font-size: 22px;
+  color: #FFFFFF;
+  line-height: 44px;
+}
+
+.vrumm-hero-slick .slick-prev::before { content: "\E5CB"; }
+.vrumm-hero-slick .slick-next::before { content: "\E5CC"; }
+
+/* Dots */
+.vrumm-hero-slick .slick-dots {
+  position: absolute;
+  bottom: 18px;
   left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vrumm-hero-slick .slick-dots li button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 0;
+  cursor: pointer;
+}
+
+.vrumm-hero-slick .slick-dots li.slick-active button {
+  background-color: #E65100;
+}
+
+@media (max-width: 767px) {
+  .vrumm-hero-slide {
+    height: 280px;
+  }
+
+  .vrumm-hero-slide-content {
+    left: 24px;
+    max-width: calc(100% - 48px);
+  }
+
+  .vrumm-hero-slide-content h3 {
+    font-size: 24px;
+  }
+}
+
+/* Grid de produto: tema vem com 3-4 por linha (col-xl-4), modelo de
+   referência usa 5 — aproveita melhor a largura disponível. */
+@media (min-width: 1200px) {
+  .products .col-xl-4,
+  .products .col-xl-3,
+  .js-product.col-xl-4,
+  .js-product.col-xl-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* Container trava em 1140px (breakpoint xl do Bootstrap) mesmo em telas
+   bem maiores — sobra muito espaço vazio nas laterais em full HD/wide.
+   Modelo de referência usa a tela de forma bem mais cheia; estende o
+   container nos breakpoints grandes em vez de travar no Bootstrap padrão. */
+@media (min-width: 1400px) {
+  .container {
+    width: 1360px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1520px;
+    max-width: 100%;
+  }
 }
 
 /* Placeholder de produto sem foto — substitui o "No image available" feio
@@ -451,4 +615,30 @@
 .vrumm-footer-help-bar a {
   color: #FFFFFF;
   text-decoration: underline;
+}
+
+/* Botão "Comparar" na ficha de produto (poscompare) */
+.vrumm-product-aux-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  color: #1A1A1A;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vrumm-product-aux-action i.material-icons {
+  font-size: 18px;
+  color: #E65100;
+}
+
+.vrumm-product-aux-action:hover {
+  border-color: #E65100;
+  color: #E65100;
 }

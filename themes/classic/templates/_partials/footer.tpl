@@ -56,9 +56,11 @@
       </div>
     </div>
   </div>
-  <div class="vrumm-footer-help-bar">
-    <p>Precisa de ajuda? Fale com a gente no WhatsApp: <a href="https://wa.me/5581985559888" target="_blank" rel="noopener noreferrer">(81) 98555-9888</a></p>
-  </div>
+  {if $modules.poscookielaw.whatsapp_number}
+    <div class="vrumm-footer-help-bar">
+      <p>Precisa de ajuda? Fale com a gente no WhatsApp: <a href="https://wa.me/55{$modules.poscookielaw.whatsapp_number|regex_replace:'/[^0-9]/':''}" target="_blank" rel="noopener noreferrer">{$modules.poscookielaw.whatsapp_number}</a></p>
+    </div>
+  {/if}
   <div class="container">
     <div class="row">
       <div class="col-md-12">

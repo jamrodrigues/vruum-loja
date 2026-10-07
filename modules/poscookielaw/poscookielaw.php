@@ -199,6 +199,19 @@ class PosCookieLaw extends Module implements WidgetInterface
         return $fields;
     }
 
+    /**
+     * Exposes the shop's phone number (Parâmetros da Loja > Contato,
+     * Configuration key PS_SHOP_PHONE) to every front template as
+     * {$modules.poscookielaw.whatsapp_number} — lets the WhatsApp link in
+     * the header/footer stay admin-editable instead of hardcoded in .tpl.
+     */
+    public function hookActionFrontControllerSetVariables($params)
+    {
+        return [
+            'whatsapp_number' => Configuration::get('PS_SHOP_PHONE'),
+        ];
+    }
+
     public function hookDisplayHeader()
     {
         $this->context->controller->registerJavascript('modules'.$this->name.'-script', 'modules/'.$this->name.'/views/js/front.js', ['position' => 'bottom', 'priority' => 150]);

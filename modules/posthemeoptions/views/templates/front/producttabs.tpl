@@ -110,7 +110,7 @@
                                 {/if}
                                 {/block}
                                 <div class="cart">
-                                    {include file='catalog/_partials/customize/button-cart.tpl' product=$product}
+                                    <a href="{$product.url}" class="btn btn-primary">Ver produto</a>
                                 </div>
                             </div>
                         

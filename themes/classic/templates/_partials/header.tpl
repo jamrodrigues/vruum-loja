@@ -34,10 +34,12 @@
         <div class="hidden-sm-down">
           <div class="col-md-12 col-xs-12 vrumm-topbar-row">
             <div class="vrumm-topbar-contact">
-              {hook h='displayNav1'}
-              <a href="https://wa.me/5581985559888" target="_blank" rel="noopener noreferrer" class="vrumm-topbar-whatsapp">
-                <i class="material-icons">&#xE0B0;</i> (81) 98555-9888
-              </a>
+              <a href="{$link->getPageLink('contact')}">Fale conosco</a>
+              {if $modules.poscookielaw.whatsapp_number}
+                <a href="https://wa.me/55{$modules.poscookielaw.whatsapp_number|regex_replace:'/[^0-9]/':''}" target="_blank" rel="noopener noreferrer" class="vrumm-topbar-whatsapp">
+                  <i class="material-icons">&#xE0B0;</i> {$modules.poscookielaw.whatsapp_number}
+                </a>
+              {/if}
             </div>
           </div>
         </div>

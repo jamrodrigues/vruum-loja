@@ -24,6 +24,12 @@ ruvector.db
 /id_product
 /qty
 /rowCount()
+/Smarty
+/display(__FILE__
+/getAdminLink('AdminModules'
+/id
+/name
+/tab
 
 # Pacote comprado do tema Optima — licenciado, pesado (~75MB), não é código do projeto.
 # Experimento de troca de tema foi abandonado (voltamos pro Classic + módulos avulsos).
