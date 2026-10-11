@@ -16,6 +16,13 @@ if [ ! -f "$PARAMS_FILE" ] && [ -n "$DB_HOST" ]; then
         $cookieKey = bin2hex(random_bytes(32));
         $cookieIv = base64_encode(random_bytes(24));
 
+        $apiKey = openssl_pkey_new([
+            "private_key_bits" => 2048,
+            "private_key_type" => OPENSSL_KEYTYPE_RSA,
+        ]);
+        openssl_pkey_export($apiKey, $apiPrivateKey);
+        $apiPublicKey = openssl_pkey_get_details($apiKey)["key"];
+
         $params = [
             "parameters" => [
                 "database_host" => getenv("DB_HOST"),
@@ -37,6 +44,8 @@ if [ ! -f "$PARAMS_FILE" ] && [ -n "$DB_HOST" ]; then
                 "use_debug_toolbar" => false,
                 "cookie_key" => $cookieKey,
                 "cookie_iv" => $cookieIv,
+                "api_public_key" => $apiPublicKey,
+                "api_private_key" => $apiPrivateKey,
             ],
         ];
 
