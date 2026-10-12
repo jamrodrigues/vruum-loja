@@ -57,4 +57,22 @@ if [ ! -f "$PARAMS_FILE" ] && [ -n "$DB_HOST" ]; then
     chown www-data:www-data "$PARAMS_FILE"
 fi
 
+# Regenera o .htaccess a cada boot com o domínio real configurado no banco.
+# Necessário porque o .htaccess do repo é baked-in na imagem (gerado em dev
+# com domínio "localhost") e o container é efêmero — sem isso, toda imagem
+# de produto quebra de novo a cada redeploy.
+if [ -f "$PARAMS_FILE" ]; then
+    echo "Regenerando .htaccess com o domínio atual..."
+    php -d display_errors=0 -r '
+        try {
+            require "config/config.inc.php";
+            Tools::generateHtaccess();
+            echo "htaccess ok\n";
+        } catch (\Throwable $e) {
+            fwrite(STDERR, "aviso: falha ao regenerar .htaccess: " . $e->getMessage() . "\n");
+        }
+    ' || true
+    chown www-data:www-data .htaccess 2>/dev/null || true
+fi
+
 exec "$@"
