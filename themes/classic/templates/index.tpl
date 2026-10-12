@@ -29,7 +29,7 @@
         {block name='page_content_top'}
           {$HERO_SLIDER nofilter}
           <div class="vrumm-trust-bar">
-            <div class="vrumm-trust-item"><i class="material-icons">&#xE558;</i> Envio para todo o Brasil</div>
+            <div class="vrumm-trust-item"><i class="material-icons">&#xE558;</i> Entrega via motoboy em Maceió/AL</div>
             <div class="vrumm-trust-item"><i class="material-icons">&#xE8A1;</i> Pix, boleto ou cartão</div>
             <div class="vrumm-trust-item"><i class="material-icons">&#xE897;</i> Compra 100% segura</div>
             <div class="vrumm-trust-item"><i class="material-icons">&#xE310;</i> Atendimento rápido</div>
