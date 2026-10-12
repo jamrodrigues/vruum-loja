@@ -15,7 +15,7 @@ h1,h2,h3,h4,.h1,.h2,.h3,.h4,.product-title,.page-heading{font-weight:800 !import
 #header .header-top .position-static,#header .header-nav a,#header .header-nav i,#header .header-nav span{color:#E0E0E0 !important;}
 #header .header-top a,#header .header-top span,#header .header-top .position-static a{color:#E0E0E0 !important;}
 #header .header-top a:hover{color:#FF6D00 !important;}
-#header #_desktop_logo img{max-height:64px;width:auto;}
+#header #_desktop_logo img{max-height:84px;width:auto;}
 #header .search-widget input{border-radius:8px !important;}
 .btn-primary,.card-block .btn-primary,button[type="submit"].btn-primary{background-color:#E65100 !important;border-color:#E65100 !important;border-radius:8px !important;font-weight:700 !important;}
 .btn-primary:hover{background-color:#FF6D00 !important;border-color:#FF6D00 !important;}
