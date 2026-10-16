@@ -22,7 +22,7 @@ h1,h2,h3,h4,.h1,.h2,.h3,.h4,.product-title,.page-heading{font-weight:800 !import
 .product-price,.current-price,.product-price-and-shipping .price,.price{color:#E65100 !important;font-weight:800 !important;}
 a{color:#E65100;}
 a:hover{color:#FF6D00;}
-.product-miniature,.js-product-miniature,.thumbnail-container{border-radius:12px !important;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.product-miniature,.js-product-miniature,.thumbnail-container{border-radius:4px !important;overflow:hidden;box-shadow:none;}
 #footer{background:#1A1A1A !important;color:#B0B0B0;}
 #footer a{color:#E0E0E0 !important;}
 #footer .h3,#footer .links-container-title,#footer h1,#footer h2,#footer h3,#footer h4,#footer h5,#footer .h1,#footer .h2,#footer .h4,#footer .h5{color:#fff !important;opacity:1 !important;}
@@ -37,8 +37,8 @@ a:hover{color:#FF6D00;}
 .block_newsletter input[type="email"]{background:#fff;border-radius:8px 0 0 8px;}
 .block_newsletter input[type="submit"]{background:#E65100 !important;color:#fff;border-radius:0 8px 8px 0;font-weight:700;}
 .block_newsletter p{color:#B0B0B0 !important;}
-.product-miniature .product-title{font-size:13px !important;font-weight:600 !important;line-height:1.35 !important;}
-.product-miniature .product-price-and-shipping .price{font-size:19px !important;font-weight:800 !important;}
+.product-miniature .product-title{font-size:13px !important;font-weight:400 !important;line-height:1.35 !important;}
+.product-miniature .product-price-and-shipping .price{font-size:19px !important;font-weight:700 !important;color:#1A1A1A !important;}
 .product-miniature .regular-price{font-size:12px !important;}
 .product-prices .current-price,.product-prices .current-price span{font-size:28px !important;font-weight:800 !important;line-height:1.15 !important;}
 .cart-summary-line.cart-total .value,#cart-subtotal-products .value,.checkout .cart-total .value{color:#E65100 !important;font-size:20px !important;font-weight:800 !important;}
@@ -90,9 +90,11 @@ body{overflow-x:hidden;}
 .products .js-product{display:block !important;float:none !important;width:100% !important;max-width:none !important;min-width:0 !important;margin:0 !important;padding:0 !important;}
 @media (min-width:576px){.products{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;}}
 
-/* ML-style product card: no CTA button, image/title/price only, info left-aligned */
-.product-miniature .product-description{padding:10px 12px 14px;text-align:left;}
-.product-miniature .product-title{margin:0 0 4px;}
-.product-miniature .product-title a{color:#1A1A1A;}
+/* ML-style product card: no CTA button, image/title/price only, info left-aligned,
+   no dead space below the price now that the button is gone, title clamped to 2
+   lines (lighter weight/color per ML) instead of a single hard-truncated line */
+.product-miniature .product-description{padding:10px 10px 10px;text-align:left;}
+.product-miniature .product-title{margin:0 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.product-miniature .product-title a{color:#666;}
 .product-miniature .product-price-and-shipping{display:flex;flex-direction:column;gap:2px;}
 .product-miniature .regular-price{text-decoration:line-through;color:#8a8a8a !important;font-weight:500 !important;}
