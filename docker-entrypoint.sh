@@ -60,18 +60,31 @@ fi
 # Regenera o .htaccess a cada boot com o domínio real configurado no banco.
 # Necessário porque o .htaccess do repo é baked-in na imagem (gerado em dev
 # com domínio "localhost") e o container é efêmero — sem isso, toda imagem
-# de produto quebra de novo a cada redeploy.
+# de produto quebra de novo a cada redeploy. Tenta algumas vezes porque no
+# boot o banco pode ainda não estar aceitando conexões (causou falha
+# silenciosa em 2026-10-12: tentativa única, exceção engolida, .htaccess
+# ficou preso em "localhost" até alguém notar e regenerar na mão).
 if [ -f "$PARAMS_FILE" ]; then
-    echo "Regenerando .htaccess com o domínio atual..."
-    php -d display_errors=0 -r '
-        try {
+    i=1
+    htaccess_ok=0
+    while [ "$i" -le 5 ]; do
+        echo "Regenerando .htaccess com o dominio atual (tentativa $i/5)..."
+        if php -d display_errors=0 -r '
             require "config/config.inc.php";
             Tools::generateHtaccess();
-            echo "htaccess ok\n";
-        } catch (\Throwable $e) {
-            fwrite(STDERR, "aviso: falha ao regenerar .htaccess: " . $e->getMessage() . "\n");
-        }
-    ' || true
+        ' 2>/tmp/htaccess-error.log; then
+            echo "htaccess ok"
+            htaccess_ok=1
+            break
+        else
+            echo "aviso: falha ao regenerar .htaccess (tentativa $i/5): $(cat /tmp/htaccess-error.log)"
+            i=$((i + 1))
+            sleep 3
+        fi
+    done
+    if [ "$htaccess_ok" -ne 1 ]; then
+        echo "ERRO: nao foi possivel regenerar .htaccess apos 5 tentativas — imagens de produto podem quebrar. Rode manualmente via terminal do container."
+    fi
     chown www-data:www-data .htaccess 2>/dev/null || true
 fi
 
