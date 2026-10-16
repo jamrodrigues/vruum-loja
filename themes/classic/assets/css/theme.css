@@ -80,3 +80,19 @@ body{overflow-x:hidden;}
 #header .vrumm-header-menu #top-menu a:hover{color:#E65100 !important;}
 #header .vrumm-header-menu #top-menu .top-menu-icon-svg{width:34px;height:34px;padding:8px;box-sizing:border-box;border-radius:50%;background:#fff;color:#E65100;box-shadow:0 1px 4px rgba(0,0,0,0.12);}
 #header .vrumm-header-menu #top-menu a:hover .top-menu-icon-svg{background:#E65100;color:#fff;}
+
+/* Product grid, ML/Shopee style: Bootstrap's .col-xs-6 etc. (float:left;width:50%) fight
+   the flex/grid display already set on .products/.product by this theme's vendor CSS,
+   which is how cards ended up rendering as one squashed column instead of an even 2-up
+   grid. Real CSS Grid on .products, with the item width forced via !important so it wins
+   over the Bootstrap float-grid classes still present in the markup, replaces it cleanly. */
+.products{display:grid !important;grid-template-columns:repeat(2,1fr);gap:10px;}
+.products .js-product{display:block !important;float:none !important;width:100% !important;max-width:none !important;min-width:0 !important;margin:0 !important;padding:0 !important;}
+@media (min-width:576px){.products{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;}}
+
+/* ML-style product card: no CTA button, image/title/price only, info left-aligned */
+.product-miniature .product-description{padding:10px 12px 14px;text-align:left;}
+.product-miniature .product-title{margin:0 0 4px;}
+.product-miniature .product-title a{color:#1A1A1A;}
+.product-miniature .product-price-and-shipping{display:flex;flex-direction:column;gap:2px;}
+.product-miniature .regular-price{text-decoration:line-through;color:#8a8a8a !important;font-weight:500 !important;}

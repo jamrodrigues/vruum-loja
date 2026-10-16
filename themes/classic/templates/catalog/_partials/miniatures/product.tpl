@@ -114,16 +114,6 @@
         {block name='product_reviews'}
           {hook h='displayProductListReviews' product=$product}
         {/block}
-
-        {block name='product_buy_action'}
-          <a
-            href="{$product.url}"
-            class="btn btn-buy-full"
-            aria-label="Comprar {$product.name|truncate:30:'...'}"
-          >
-            Comprar
-          </a>
-        {/block}
       </div>
 
       {include file='catalog/_partials/product-flags.tpl'}
